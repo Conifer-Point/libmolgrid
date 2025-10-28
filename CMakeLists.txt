@@ -51,8 +51,8 @@ configure_file (
   "${PROJECT_BINARY_DIR}/include/libmolgrid/config.h"
   )
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CUDA_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CUDA_STANDARD 17)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -Wall -Wno-unknown-pragmas -Werror")
@@ -68,7 +68,7 @@ if(CUDA_VERSION_MAJOR LESS 11)
 #compile for all major architectures >= 35
  set(CMAKE_CUDA_ARCHITECTURES 35 50 60 70 75)
 else()
- set(CMAKE_CUDA_ARCHITECTURES 52 60 70 75 80)
+ set(CMAKE_CUDA_ARCHITECTURES 75 80 120)
 endif()
 
 set(CMAKE_CUDA_FLAGS_RELEASE "-O3 -g -lineinfo")
